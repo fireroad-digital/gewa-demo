@@ -16,9 +16,27 @@
     scrolling="no"
     align="middle"
     frameborder="0"
-    src="https://fireroad-digital.github.io/gewa"
+    src="https://fireroad-digital.github.io/gewa/ovation/mapbox/gewa-mapbox-ovation.html"
   ></iframe>
-  <h2>Some Interesting Information</h2>
+  <script>
+    // Set the height when notified by the iframe.
+    window.addEventListener('message', function (event) {
+      if (event.data.type === 'GEWA_SET_HEIGHT') {
+        let iframe = document.getElementById('gewaDealerExample');
+        iframe.style.height = event.data.data.height + 'px';
+      }
+    });
+  </script>
+  <iframe
+    id="gewaDealerExample"
+    title="Gewa Dealer Example"
+    width="900"
+    scrolling="no"
+    align="middle"
+    frameborder="0"
+    src="https://gewa.ddev.site/ovation/dealers/gewa-dealers-ovation.html"
+  ></iframe>
+
 </body>
 
 </html>
